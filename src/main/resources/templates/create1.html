@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>create user</title>
+</head>
+<body>
+
+
+
+        <form  th:method="POST" th:action="@{/admin/create}" th:object="${user}">
+            <label for="name">First name</label>
+            <br>
+            <input th:field="*{name}" type="text" id="name"/>
+            <br><br>
+            <label for="password">Password</label>
+            <br>
+            <input th:field="*{password}" type="text" id="password"/>
+            <br><br>
+            <label for="lastName">Last name</label>
+            <br>
+            <input th:field="*{lastName}" type="text" id="lastName"/>
+            <br><br>
+            <label for="age">Age</label>
+            <br>
+            <input th:field="*{age}" type="number" id="age"/>
+            <br><br>
+            <label for="email">Email:</label>
+            <br>
+            <input th:field="*{email}" type="text" id="email"/>
+            <br><br>
+
+            <label for="role">Roles:</label>
+            <select multiple="multiple" th:field="*{roles}"
+                    type="text" id="role">
+                <option th:each="role : ${roles}" th:value="${role.getId()}" th:text="${role.getName()}"></option>
+
+            </select>
+
+            <p>
+                <input type="submit" value="Create"/>
+            </p>
+        </form>
+
+
+
+</body>
+</html>
