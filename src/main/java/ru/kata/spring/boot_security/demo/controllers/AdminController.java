@@ -21,8 +21,8 @@ public class AdminController {
         this.userService = userService;
         this.roleService = roleService;
         if (roleService.listRoles().isEmpty()) {
-            roleService.addRole(new Role("ADMIN"));
-            roleService.addRole(new Role("USER"));
+            roleService.addRole(new Role("ROLE_ADMIN"));
+            roleService.addRole(new Role("ROLE_USER"));
         }
     }
 
@@ -70,6 +70,7 @@ public class AdminController {
 
     @PostMapping("/update/{id}")
     public String updateUser(@ModelAttribute("user") User user, @RequestParam(value = "role") String role) {
+
         user.setRoles(roleService.findRolesByName(role));
         userService.updateUser(user);
         return "redirect:/admin";
