@@ -5,7 +5,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.kata.spring.boot_security.demo.Exception.FoundException;
 import ru.kata.spring.boot_security.demo.Exception.NotFoundExeption;
 import ru.kata.spring.boot_security.demo.model.User;
 import ru.kata.spring.boot_security.demo.repository.RoleRepository;
@@ -59,7 +58,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public User findUserById(Long userId) {
         Optional<User> userFromDb = userRepository.findById(userId);
-        if(userFromDb.isEmpty()){
+        if (userFromDb.isEmpty()) {
             throw new NotFoundExeption();
         }
         return userFromDb.get();
@@ -89,20 +88,14 @@ public class UserServiceImpl implements UserService {
 
 
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-//        System.out.println("VOT eto soxranyaetsa " + user.toString());
         userRepository.save(user);
         System.out.println("soxranilsa");
 
-//        return newUser;
     }
 
     @Override
     @Transactional
     public void updateUser(User user) {
-//        User userFromDb = userRepository.getById(user.getId());
-//        if (!userFromDb.getPassword().equals(user.getPassword())) {
-//            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-//        }
         userRepository.save(user);
     }
 

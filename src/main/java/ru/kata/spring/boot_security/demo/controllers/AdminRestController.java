@@ -26,28 +26,12 @@ public class AdminRestController {
 
     @PostMapping()
     public ResponseEntity<List<User>> createUser(@RequestBody User user) {
-//        System.out.println("VOT eto vxodit " + user.toString());
-//
-//
-//        User userNew = new User();
-//
-//        userNew.setPassword(user.getPassword());
-//        userNew.setEmail(user.getEmail());
-//        userNew.setAge(user.getAge());
-//        userNew.setLastName(user.getLastName());
-//        userNew.setName(user.getName());
-//        userNew.setRoles(user.getRoles());
-////        User userAdd = user;
-////        userAdd.setRoles(user.getRoles());
-//        System.out.println("VOT eto peredaetsa " + userNew.toString());
         userService.saveUser(user);
         return ResponseEntity.ok(userService.allUsers());
     }
 
     @PutMapping()
     public ResponseEntity<List<User>> updateUser(@RequestBody User user) {
-//        user.setRoles(user.getRoles());
-//        userService.updateUser(user);
         System.out.println("VOT eto vxodit " + user.toString());
 
 

@@ -4,19 +4,19 @@ formEdit.addEventListener('submit', e => {
 
     const formData = new FormData(formEdit);
     const object = {
-        roles:[]
+        roles: []
     };
 
     formData.forEach((value, key) => {
         console.log(key)
-        if (key === "rolesId"){
+        if (key === "rolesId") {
 
 
             const roleId = value.split(" ")[0];
             const roleName = value.split(" ")[1];
             const role = {
-                id : roleId,
-                name : roleName
+                id: roleId,
+                name: roleName
             };
 
             object.roles.push(role);

@@ -149,21 +149,8 @@
                                 </div>
                                 <div class="row mb-3">
                                     <label for="rolesId" class="form-label text-center"><b>Role</b></label>
-<!--                                    <select multiple class="custom-select w-100"-->
-<!--                                            size="2" id="role" name="role">-->
-<!--                                        <option-->
-<!--                                                th:each="role : ${rolesList}"-->
-<!--                                                th:text="${role.getName()}"-->
-<!--                                                th:value="${role.name}">-->
-<!--                                        </option>-->
-<!--                                    </select>-->
                                     <select name="rolesId" class="form-select" size="2" multiple aria-label="rolesId"
                                             id="rolesId" required>
-<!--                                        <option-->
-<!--                                                                                    th:each="role : ${roles}"-->
-<!--                                                                                    th:value="${role.name}"-->
-<!--                                                                                    th:text="${role.getName()}">-->
-<!--                                                                            </option>-->
                                         <option value="1 ROLE_ADMIN">ROLE_ADMIN</option>
                                         <option value="2 ROLE_USER">ROLE_USER</option>
                                     </select>
@@ -223,11 +210,11 @@
                         <div class="form-group row mb-3">
                             <label class="form-label text-center"><b>Role</b></label>
                             <select class="form-select" size="2" name="rolesId" multiple aria-label="rolesId" required>
-<!--                                <option-->
-<!--                                        th:each="role : ${roles}"-->
-<!--                                        th:value="${role.name}"-->
-<!--                                        th:text="${role.getName()}">-->
-<!--                                </option>-->
+                                <!--                                <option-->
+                                <!--                                        th:each="role : ${roles}"-->
+                                <!--                                        th:value="${role.name}"-->
+                                <!--                                        th:text="${role.getName()}">-->
+                                <!--                                </option>-->
                                 <option value="1 ROLE_ADMIN">ROLE_ADMIN</option>
                                 <option value="2 ROLE_USER">ROLE_USER</option>
                             </select>
@@ -316,5 +303,4 @@
 
 
 </body>
-<!--<csrf disabled = "true" />-->
 </html>
