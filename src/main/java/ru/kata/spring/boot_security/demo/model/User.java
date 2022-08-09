@@ -33,9 +33,10 @@ public class User implements UserDetails {
     private String email;
 
     @Fetch(FetchMode.JOIN)
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE})//(fetch = FetchType.EAGER)
+    @ManyToMany
+//            (cascade = {
+//            CascadeType.PERSIST,
+//            CascadeType.MERGE})//(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -152,5 +153,18 @@ public class User implements UserDetails {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, lastName, age, password, email, roles);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", roles=" + roles +
+                '}';
     }
 }

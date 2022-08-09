@@ -11,7 +11,7 @@ editModal.addEventListener('show.bs.modal', event => {
 
 
     const modaluserId = editModal.querySelector('#userId')
-    const modaluserName = editModal.querySelector('#userName')
+    const modaluserName = editModal.querySelector('#name')
     const modaluserSurname = editModal.querySelector('#userSurname')
     const modaluserAge = editModal.querySelector('#userAge')
     const modaluserEmail = editModal.querySelector('#userEmail')

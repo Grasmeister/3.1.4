@@ -29,7 +29,9 @@ formEdit.addEventListener('submit', e => {
         headers: {
             "Content-type": "application/json"
         },
-        body: JSON.stringify(object)
+        body: JSON.stringify(
+            object
+        )
     })
         .then(() => getUsers());
     $("#ModalEdit").modal("hide");
